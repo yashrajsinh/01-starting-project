@@ -8,7 +8,7 @@ import {EXAMPLES} from "./data.js"
 import { useState } from "react";
 
 function App() {
-const [selectedTopic, setSelectedTopic] = useState(); 
+const [selectedTopic, setSelectedTopic] = useState('components'); 
   //let tabContent = 'Please click a button';
 
   function handleClick(selectedButton) {
@@ -48,7 +48,7 @@ const [selectedTopic, setSelectedTopic] = useState();
            <h3> {EXAMPLES[selectedTopic].title}</h3>
             <p>{EXAMPLES[selectedTopic].description}</p>
             <code>
-              {EXAMPLES[selectedTopic].code}
+              {EXAMPLES[selectedTopic].code }
             </code>
           </div> }
            
