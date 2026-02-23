@@ -7,7 +7,7 @@ import { EXAMPLES } from "./data.js";
 //special react func to deal with data it's called Hook
 import { useState } from "react";
 
-function App() {
+export default function App() {
   const [selectedTopic, setSelectedTopic] = useState();
   //let tabContent = 'Please click a button';
 
@@ -36,15 +36,9 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
-            <CoreConcept
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-              image={CORE_CONCEPTS[0].image}
-            />
-            {/* This is same as above but in samller version */}
-            <CoreConcept {...CORE_CONCEPTS[1]} />
-            <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} />
+            {CORE_CONCEPTS.map((conceptItems) => (
+              <CoreConcept {...conceptItems} />
+            ))}
           </ul>
         </section>
         <section id="examples">
@@ -85,4 +79,4 @@ function App() {
     </div>
   );
 }
-export default App;
+
